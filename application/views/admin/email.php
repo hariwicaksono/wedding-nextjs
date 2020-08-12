@@ -1,0 +1,1 @@
+<input name="email" value="<?php echo $data->email;?>" type="hidden">

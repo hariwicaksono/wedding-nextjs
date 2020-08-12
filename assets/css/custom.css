@@ -1,0 +1,50 @@
+.dancing{
+  font-family: 'Dancing Script', cursive;
+}
+.merri{
+font-family: 'Merriweather', serif;
+}
+.uk-heading-primary{font-size: 4rem}
+.text-grey-50 {
+  color: #fafafa !important;
+} 
+a.text-grey-50:hover,
+a.text-grey-50:focus {
+  color: #f5f5f5;
+} 
+input.uk-search-input {
+  color: #424242 !important;
+}
+.uk-search-icon{color: #424242 !important;}
+.text-grey-900 {
+  color: #212121 !important;
+}
+a.text-grey-900:hover,
+a.text-grey-900:focus {
+  color: #080808;
+}
+.uk-frame img {
+ border: 28px solid transparent;
+ border-image: url('../images/border-image-6.svg') 30 35 stretch;
+-webkit-border-image: url('../images/border-image-6.svg') 30 35 stretch;
+}
+.thumbnail {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+}
+.thumbnail img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.thumbnail img.portrait {
+  width: 100%;
+  height: auto;
+}
