@@ -36,7 +36,8 @@ class Navigationbar extends Component{
         query: '',
         results: [],
         Pengaturan: [],
-        loading: true
+        loading: true,
+        LoginUrl:'http://localhost/wedding-cireact/login'
       }
       this.handlerChange = this.handlerChange.bind(this)
         this.handlerSubmit = this.handlerSubmit.bind(this)
@@ -112,7 +113,7 @@ handlerSubmit = (event) => {
           <Nav className="ml-auto">
 
         <NavItem className="navItem">
-          <a className="btn btn-primary" href="http://localhost/wedding-server/login"><BoxArrowInRight size="18"/> Login</a>
+          <a className="btn btn-primary" href={this.state.LoginUrl}><BoxArrowInRight size="18"/> Login</a>
         </NavItem>
 
         </Nav>

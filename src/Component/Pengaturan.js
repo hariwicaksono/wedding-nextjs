@@ -5,7 +5,7 @@ class Pengaturan extends Component {
     constructor(props){
         super(props)
         this.state={
-            url : 'http://localhost/wedding-server/assets/images/'
+            url : 'http://localhost/wedding-cireact/assets/images/'
         }
     }
     render() {

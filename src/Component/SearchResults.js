@@ -1,13 +1,14 @@
 import React from 'react'
 import {Container,Card, Row, Col} from 'react-bootstrap'
 
+const url = 'http://localhost/wedding-cireact/assets/images/photos/'
 const SearchResults = (props) => {
   const options = props.data.map(r => (
  
     <Card className="shadow" key={r.id}>
       <Row className="no-gutters">
       <Col md="4">
-        <Card.Img variant="top" src={'http://localhost/wedding-server/assets/images/photos/'+r.foto} />
+        <Card.Img variant="top" src={url+r.foto} />
       </Col>
       <Col md="8">
         <Card.Body>

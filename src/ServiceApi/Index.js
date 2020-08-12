@@ -1,6 +1,6 @@
 import Axios from 'axios'
 
-const RoothPath = "http://localhost/wedding-server/api/"
+const RoothPath = "http://localhost/wedding-cireact/api/"
 
 const GET = (path) => {
     const promise = new Promise((resolve,reject)=>{
