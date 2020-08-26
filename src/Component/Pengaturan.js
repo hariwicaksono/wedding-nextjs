@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { Container} from 'react-bootstrap';
+import {ImagesUrl} from '../ServiceApi/Index'
 
 class Pengaturan extends Component {
     constructor(props){
         super(props)
         this.state={
-            url : 'http://localhost/wedding-cireact/assets/images/'
+            url : ImagesUrl()
         }
     }
     render() {

@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 //import {NavLink} from 'react-router-dom'
-import API from '../ServiceApi/Index'
+import API, {LoginUrl} from '../ServiceApi/Index'
 import Loader from 'react-loader'
 import SearchResults from './SearchResults'
 import Pengaturan from './Pengaturan'
@@ -37,7 +37,7 @@ class Navigationbar extends Component{
         results: [],
         Pengaturan: [],
         loading: true,
-        LoginUrl:'http://localhost/wedding-cireact/login'
+        LoginUrl: LoginUrl()
       }
       this.handlerChange = this.handlerChange.bind(this)
         this.handlerSubmit = this.handlerSubmit.bind(this)

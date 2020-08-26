@@ -6,7 +6,7 @@ import ScrollToTop from 'react-router-scroll-top';
  
 function App() {
   return (
-    <BrowserRouter basename="/wedding-cireact">
+    <BrowserRouter basename="/wedding-guestbook-app">
     <ScrollToTop>
         <Route path="/" exact component={Home} />
         <NotificationContainer />

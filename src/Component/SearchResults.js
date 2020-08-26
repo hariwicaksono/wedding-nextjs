@@ -1,7 +1,9 @@
 import React from 'react'
 import {Container,Card, Row, Col} from 'react-bootstrap'
+import {PhotosUrl} from '../ServiceApi/Index'
 
-const url = 'http://localhost/wedding-cireact/assets/images/photos/'
+const url = PhotosUrl();
+
 const SearchResults = (props) => {
   const options = props.data.map(r => (
  

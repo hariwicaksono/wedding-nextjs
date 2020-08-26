@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/wedding-cireact/build/static/css/main.70895f2a.chunk.css",
-    "main.js": "/wedding-cireact/build/static/js/main.92fda0b5.chunk.js",
-    "main.js.map": "/wedding-cireact/build/static/js/main.92fda0b5.chunk.js.map",
-    "runtime-main.js": "/wedding-cireact/build/static/js/runtime-main.482d0ddb.js",
-    "runtime-main.js.map": "/wedding-cireact/build/static/js/runtime-main.482d0ddb.js.map",
-    "static/css/2.ea26af7c.chunk.css": "/wedding-cireact/build/static/css/2.ea26af7c.chunk.css",
-    "static/js/2.88e47703.chunk.js": "/wedding-cireact/build/static/js/2.88e47703.chunk.js",
-    "static/js/2.88e47703.chunk.js.map": "/wedding-cireact/build/static/js/2.88e47703.chunk.js.map",
-    "index.html": "/wedding-cireact/build/index.html",
-    "precache-manifest.0422432d564534255edafcbed3a45eb1.js": "/wedding-cireact/build/precache-manifest.0422432d564534255edafcbed3a45eb1.js",
-    "service-worker.js": "/wedding-cireact/build/service-worker.js",
-    "static/css/2.ea26af7c.chunk.css.map": "/wedding-cireact/build/static/css/2.ea26af7c.chunk.css.map",
-    "static/css/main.70895f2a.chunk.css.map": "/wedding-cireact/build/static/css/main.70895f2a.chunk.css.map",
-    "static/js/2.88e47703.chunk.js.LICENSE.txt": "/wedding-cireact/build/static/js/2.88e47703.chunk.js.LICENSE.txt",
-    "static/media/notifications.css": "/wedding-cireact/build/static/media/notification.c0d3c94c.eot"
+    "main.css": "/wedding-guestbook-app/build/static/css/main.70895f2a.chunk.css",
+    "main.js": "/wedding-guestbook-app/build/static/js/main.c0792214.chunk.js",
+    "main.js.map": "/wedding-guestbook-app/build/static/js/main.c0792214.chunk.js.map",
+    "runtime-main.js": "/wedding-guestbook-app/build/static/js/runtime-main.7383ddc3.js",
+    "runtime-main.js.map": "/wedding-guestbook-app/build/static/js/runtime-main.7383ddc3.js.map",
+    "static/css/2.43e8dcea.chunk.css": "/wedding-guestbook-app/build/static/css/2.43e8dcea.chunk.css",
+    "static/js/2.3d296613.chunk.js": "/wedding-guestbook-app/build/static/js/2.3d296613.chunk.js",
+    "static/js/2.3d296613.chunk.js.map": "/wedding-guestbook-app/build/static/js/2.3d296613.chunk.js.map",
+    "index.html": "/wedding-guestbook-app/build/index.html",
+    "precache-manifest.fdd623f00c9dedfa6c2dcd46eb198973.js": "/wedding-guestbook-app/build/precache-manifest.fdd623f00c9dedfa6c2dcd46eb198973.js",
+    "service-worker.js": "/wedding-guestbook-app/build/service-worker.js",
+    "static/css/2.43e8dcea.chunk.css.map": "/wedding-guestbook-app/build/static/css/2.43e8dcea.chunk.css.map",
+    "static/css/main.70895f2a.chunk.css.map": "/wedding-guestbook-app/build/static/css/main.70895f2a.chunk.css.map",
+    "static/js/2.3d296613.chunk.js.LICENSE.txt": "/wedding-guestbook-app/build/static/js/2.3d296613.chunk.js.LICENSE.txt",
+    "static/media/notifications.css": "/wedding-guestbook-app/build/static/media/notification.c0d3c94c.eot"
   },
   "entrypoints": [
-    "static/js/runtime-main.482d0ddb.js",
-    "static/css/2.ea26af7c.chunk.css",
-    "static/js/2.88e47703.chunk.js",
+    "static/js/runtime-main.7383ddc3.js",
+    "static/css/2.43e8dcea.chunk.css",
+    "static/js/2.3d296613.chunk.js",
     "static/css/main.70895f2a.chunk.css",
-    "static/js/main.92fda0b5.chunk.js"
+    "static/js/main.c0792214.chunk.js"
   ]
 }
