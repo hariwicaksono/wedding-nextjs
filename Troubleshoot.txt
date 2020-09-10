@@ -1,0 +1,5 @@
+Troubleshooting Masalah Umum yang terjadi:
+1. "the term 'npm' is not recognized as the name of a cmdlet"
+
+https://www.c-sharpcorner.com/blogs/npm-is-not-recognized-from-visual-studio
+https://stackoverflow.com/questions/27864040/fixing-npm-path-in-windows-8-and-10
