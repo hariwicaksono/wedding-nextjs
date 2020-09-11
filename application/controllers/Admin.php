@@ -16,7 +16,7 @@ class Admin extends CI_Controller{
 		$this->load->model('rekapkonfirmasi_model','rekapkonfirmasi');
 		$data['data']=$this->orang->get_all_orang();
 		$data['jumlah']=$this->orang->count_all_orang();
-		$data['konfirmasi']=$this->rekapkonfirmasi->get_all();
+		$data['konfirmasi']=$this->rekapkonfirmasi->query_all();
 		$this->load->view('admin/home',$data);	
 		 
 	}
