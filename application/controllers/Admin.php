@@ -13,6 +13,15 @@ class Admin extends CI_Controller{
 	}
 
 	function index(){
+		$this->load->model('rekapkonfirmasi_model','rekapkonfirmasi');
+		$data['data']=$this->orang->get_all_orang();
+		$data['jumlah']=$this->orang->count_all_orang();
+		$data['konfirmasi']=$this->rekapkonfirmasi->get_all();
+		$this->load->view('admin/home',$data);	
+		 
+	}
+
+	function daftartamu(){
 		
 		$data['data']=$this->orang->get_all_orang();
 		$this->load->view('admin/admin',$data);	
@@ -106,7 +115,7 @@ class Admin extends CI_Controller{
 		$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE
 
 		$this->orang->simpan_orang($id,$nama,$nohp,$email,$alamat,$image_name); //simpan ke database
-		redirect('admin');
+		redirect('admin/daftartamu');
 	}
 	
 	function edit_orang(){

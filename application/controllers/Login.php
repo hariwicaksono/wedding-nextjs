@@ -29,8 +29,8 @@ class Login extends CI_Controller {
 	            $this->form_validation->set_rules('password', 'Password', 'required');
 
 	            //set message form validation
-	            $this->form_validation->set_message('required', '<div class="alert alert-danger" style="margin-top: 3px">
-	                <div class="header"><b><i class="fa fa-exclamation-circle"></i> {field}</b> harus diisi</div></div>');
+	            $this->form_validation->set_message('required', '<div class="uk-alert-danger" uk-alert style="margin-top:-10px;margin-bottom:-10px"> <a class="uk-alert-close" uk-close></a>
+	                <p><b>{field}</b> harus diisi</p></div>');
 
 	            //cek validasi
 				if ($this->form_validation->run() == TRUE) {
@@ -60,8 +60,9 @@ class Login extends CI_Controller {
 	                }
 	            }else{
 
-	            	$data['error'] = '<div class="alert alert-danger" style="margin-top: 3px">
-	                	<div class="header"><b><i class="fa fa-exclamation-circle"></i> ERROR</b> username atau password salah!</div></div>';
+	            	$data['error'] = '<div class="uk-alert-warning" uk-alert>
+					<a class="uk-alert-close" uk-close></a>
+	                	<b>Perhatian</b> username atau password salah!</div>';
 	            	$this->load->view('login', $data);
 	            }
 

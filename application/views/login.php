@@ -1,116 +1,95 @@
+<!DOCTYPE html>
 <html>
 <head>
-	<title>Login - CodeIgniter</title>
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <style>
-        .form-signin
-        {
-            max-width: 330px;
-            padding: 15px;
-            margin: 0 auto;
-        }
-        .form-signin .form-signin-heading, .form-signin .checkbox
-        {
-            margin-bottom: 10px;
-        }
-        .form-signin .checkbox
-        {
-            font-weight: normal;
-        }
-        .form-signin .form-control
-        {
-            position: relative;
-            font-size: 16px;
-            height: auto;
-            padding: 10px;
-            -webkit-box-sizing: border-box;
-            -moz-box-sizing: border-box;
-            box-sizing: border-box;
-        }
-        .form-signin .form-control:focus
-        {
-            z-index: 2;
-        }
-        .form-signin input[type="text"]
-        {
-            margin-bottom: -1px;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        .form-signin input[type="password"]
-        {
-            margin-bottom: 10px;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-        }
-        .account-wall
-        {
-            margin-top: 20px;
-            padding: 40px 0px 20px 0px;
-            background-color: #f7f7f7;
-            -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-        }
-        .login-title
-        {
-            color: #555;
-            font-size: 18px;
-            font-weight: 400;
-            display: block;
-        }
-        .profile-img
-        {
-            width: 96px;
-            height: 96px;
-            margin: 0 auto 10px;
-            display: block;
-            -moz-border-radius: 50%;
-            -webkit-border-radius: 50%;
-            border-radius: 50%;
-        }
-        .need-help
-        {
-            margin-top: 10px;
-        }
-        .new-account
-        {
-            display: block;
-            margin-top: 10px;
-        }
-    </style>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<base href="<?php echo base_url()?>">
+        <meta name="robots" content="noindex, nofollow">
+<meta name="googlebot" content="noindex, nofollow">
+	<title>Login Admin</title>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/uikit.min.css'?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/style.css'?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/notyf.min.css'?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/datatables.min.css'?>">
+<style>
+.uk-navbar-nav li a{font-size:1rem}
+</style>
 </head>
 <body>
-<div class="container" style="margin-top: 50px">
-    <div class="row">
-        <div class="col-sm-6 col-md-4 col-md-offset-4">
-            <h2 class="text-center">Masuk Administrator</h2>
-            <?php if(isset($error)) { echo $error; }; ?>
-            <div class="account-wall">
-               
-                <form class="form-signin" method="POST" action="<?php echo base_url() ?>login">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="username" placeholder="Username Anda" autofocus>
-                    <?php echo form_error('username'); ?>
-                </div>
-                <div class="form-group">
-                    <input type="password" name="password" class="form-control" placeholder="Password Anda">
-                    <?php echo form_error('password'); ?>
-                </div>
+<div uk-sticky="media: 960" class="uk-navbar-container tm-navbar-container uk-sticky uk-active" style="position: fixed; top: 0px; width: 1903px;">
+            <div class="uk-container uk-container-expand">
+                <nav uk-navbar>
+                    <div class="uk-navbar-left">
+                        <a href="#" class="uk-navbar-item uk-logo">
+                           Wedding
+                        </a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="content-background">
+            <div class="uk-section-large">
+                <div class="uk-container uk-container-large">
+                    <div uk-grid class="uk-child-width-1-1@s uk-child-width-2-3@l">
+                        <div class="uk-width-1-1@s uk-width-1-5@l uk-width-1-3@xl"></div>
+                        <div class="uk-width-1-1@s uk-width-3-5@l uk-width-1-3@xl">
+                            <div class="uk-card uk-card-default">
+                                <div class="uk-card-header">
+                                   <strong>Masuk Administrator</strong>
+                                </div>
+                                <div class="uk-card-body">
+    
+                                    <?php if(isset($error)) { echo $error; }; ?>
+                                    <form method="POST" action="<?php echo base_url() ?>index.php/login">
+                                        <fieldset class="uk-fieldset">
 
-                <button class="btn btn-lg btn-primary btn-block" name="btn-login" id="btn-login" type="submit">
-                    Masuk</button>
+                                            <div class="uk-margin">
+                                                <div class="uk-position-relative">
+                                                <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                                    <input type="text" class="uk-input" name="username" placeholder="Username Anda" autofocus>
+                    
+                                                </div>
+                                                <?php echo form_error('username'); ?>
+                                            </div>
+
+                                            <div class="uk-margin">
+                                                <div class="uk-position-relative">
+                                                <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                                    <input type="password" name="password" class="uk-input" placeholder="Password Anda">
+                    
+                                                </div>
+                                                <?php echo form_error('password'); ?>
+                                            </div>
+
+
+                                            <div class="uk-margin">
+                                                <button type="submit" class="uk-button uk-button-primary uk-width-1-1">
+                                                <span uk-icon="icon: sign-in"></span>&nbsp; Masuk
+                                                </button>
+                                            </div>
+
+                                            <hr />
+
+                                            <center>
+                                            <a href="./" class="text-center new-account">Kembali </a>
+                                            <div id="error" style="margin-top: 5px"></div>
+                                            </center>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-1-1@s uk-width-1-5@l uk-width-1-3@xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         
-                </form>
-            </div>
-            <a href="javascript:history.go(-1)" class="text-center new-account">Kembali </a>
-            <div id="error" style="margin-top: 10px"></div>
-        </div>
-    </div>
-</div>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets/js/jquery-2.1.4.min.js'?>"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets/js/uikit.min.js'?>"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets/js/uikit-icons.min.js'?>"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets/js/script.js'?>"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
 </body>
 </html>

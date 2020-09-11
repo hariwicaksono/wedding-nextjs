@@ -5,7 +5,7 @@
 
 		<div class="uk-margin">
 		
-			<h2>Data Tamu Undangan <button type="button" class="uk-button uk-button-primary" uk-toggle="target: #modal-example" alt="Tambah Data Tamu" title="Tambah Data Tamu" uk-tooltip="Tambah Data Tamu"><span uk-icon="plus"></span> Tambah</button></h2>
+			<h2>Daftar Tamu Undangan <button type="button" class="uk-button uk-button-primary" uk-toggle="target: #modal-example" alt="Tambah Data Tamu" title="Tambah Data Tamu" uk-tooltip="Tambah Data Tamu"><span uk-icon="plus"></span> Tambah</button></h2>
 			
 			<?php if($this->session->flashdata('msg')): ?>
 				<p><?php echo $this->session->flashdata('msg'); ?></p>

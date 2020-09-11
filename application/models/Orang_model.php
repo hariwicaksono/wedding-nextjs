@@ -5,6 +5,11 @@ class Orang_model extends CI_Model{
 		$hasil=$this->db->get('orang');
 		return $hasil;
 	}
+
+	function count_all_orang(){
+		$hasil=$this->db->count_all('orang');
+		return $hasil;
+	}
 	
 	function simpan_orang($id,$nama,$nohp,$email,$alamat,$image_name){
 		$data = array(
