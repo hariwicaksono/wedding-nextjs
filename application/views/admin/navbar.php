@@ -63,4 +63,4 @@
 <div class="uk-section-small">
 
 <div class="uk-container uk-container-large">
-<div class="uk-card uk-card-default uk-card-body">
+<div class="uk-card">

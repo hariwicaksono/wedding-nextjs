@@ -8,7 +8,7 @@
 <script type="text/javascript" src="<?php echo base_url().'assets/js/script.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url().'assets/js/status.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url().'assets/js/notification.js'?>"></script>
-<script type="text/javascript" src="<?php echo base_url().'assets/js/datatables1.min.js'?>"></script>
+<script type="text/javascript" src="<?php echo base_url().'assets/js/datatables.min.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url().'assets/js/pdfmake.min.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url().'assets/js/vfs_fonts.js'?>"></script>
 <script type="text/javascript" src="<?php echo base_url().'assets/js/dataTables.buttons.min.js'?>"></script>
@@ -121,5 +121,6 @@ buttons: [
         
     });
 </script>
+
 </body>
 </html>

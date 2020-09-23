@@ -34,7 +34,7 @@
 								?>
 									<span class="uk-label uk-label-primary">Hadir: <strong><?php echo $row->Hadir;?></strong></span>
 									<span class="uk-label uk-label-danger">Tidak Bisa: <strong><?php echo $row->Tidak_Bisa;?></strong></span>
-									<span class="uk-label uk-label-warning">Masih Pertimbangan: <strong><?php echo $row->Masih_Pertimbangan;?></strong></span>
+									<span class="uk-label uk-label-warning">Belum Tahu: <strong><?php echo $row->Masih_Pertimbangan;?></strong></span>
 
 								<?php }
 								?>

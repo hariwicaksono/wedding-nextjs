@@ -1,9 +1,9 @@
 <?php $this->load->view('admin/header');?>
 <body>
 <?php $this->load->view('admin/navbar');?>
-	<div class="uk-container uk-container-large uk-margin">
+	<div class="uk-container uk-container-large">
 
-		<div class="uk-margin">
+		<div class="uk-card uk-card-default uk-card-body">
 		
 			<h2>Daftar Tamu Undangan <button type="button" class="uk-button uk-button-primary" uk-toggle="target: #modal-example" alt="Tambah Data Tamu" title="Tambah Data Tamu" uk-tooltip="Tambah Data Tamu"><span uk-icon="plus"></span> Tambah</button></h2>
 			
@@ -63,8 +63,8 @@
 		          </p>
 		</form>
         
-    </div>
-</div>
+		</div>
+	</div>
 	
 	<!-- ============ MODAL EDIT BARANG =============== -->
     <?php
@@ -131,4 +131,5 @@
  
     <?php endforeach;?>
     <!--END MODAL ADD BARANG-->
+	
 	<?php $this->load->view('admin/footer');?>

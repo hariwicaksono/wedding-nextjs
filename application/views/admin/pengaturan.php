@@ -5,9 +5,9 @@
 <?php $this->load->view('admin/navbar');?>
 
 
-	<div class="uk-container uk-container-large uk-margin">
+	<div class="uk-container uk-container-large">
 		
-		<div class="uk-margin">
+		<div class="uk-card uk-card-default uk-card-body">
 			
 			<h2>Pengaturan Sistem</h2>
 			<?php if($this->session->flashdata('msg')): ?>

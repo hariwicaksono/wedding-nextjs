@@ -1,9 +1,9 @@
 <?php $this->load->view('admin/header');?>
 <body>
 <?php $this->load->view('admin/navbar');?>
-<div class="uk-container uk-container-small uk-margin">
+<div class="uk-container uk-container-small">
 		
-		<div class="row my-3">
+		<div class="uk-card uk-card-default uk-card-body">
 			
 			<h2>Ganti Password</h2>
 			<?php if($this->session->flashdata('msg')): ?>
@@ -11,7 +11,7 @@
 			<?php endif; ?>
             <?php echo @$error; ?>
      
-            <form method="post" action=''>
+        <form method="post" action=''>
 			<div class="uk-margin">
 		<label>Password Lama</label>
 		<input class="uk-input" type="password" name="old_pass" id="name" placeholder="Password Lama" required>
