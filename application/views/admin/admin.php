@@ -5,7 +5,7 @@
 
 		<div class="uk-card uk-card-default uk-card-body">
 		
-			<h2>Daftar Tamu Undangan <button type="button" class="uk-button uk-button-primary" uk-toggle="target: #modal-example" alt="Tambah Data Tamu" title="Tambah Data Tamu" uk-tooltip="Tambah Data Tamu"><span uk-icon="plus"></span> Tambah</button></h2>
+			<h2>Daftar Tamu Undangan <button type="button" class="uk-button uk-button-primary" uk-toggle="target: #modal-example" alt="Tambah Data Tamu" title="Tambah Data Tamu" uk-tooltip="Tambah Data Tamu"><span uk-icon="plus"></span> Tambah</button> <a href="admin/excel_import" class="uk-button uk-button-default" alt="Import Excel" title="Import Excel" uk-tooltip="Import Excel" style="background-color: #32D296;color: #f2f2f2"><span uk-icon="file-text"></span> Import Excel</a></h2>
 			
 			<?php if($this->session->flashdata('msg')): ?>
 				<p><?php echo $this->session->flashdata('msg'); ?></p>

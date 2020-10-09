@@ -3,6 +3,7 @@ class Admin extends CI_Controller{
 	function __construct(){
 		parent::__construct();
 		$this->load->library('datatables');
+		$this->load->library('Excel'); 
 		$this->load->model('admin_model','admin');
 
 		if(!$this->admin->logged_id())
@@ -306,6 +307,90 @@ class Admin extends CI_Controller{
 		$this->load->view('admin/ganti_password');	
 	}
 
+	public function excel_import()
+    {
+        $this->load->view('admin/import');
+    }
+
+	function excel_simpan()
+    {
+        $config['upload_path'] = realpath('excel');
+        $config['allowed_types'] = 'xlsx|xls|csv';
+        $config['max_size'] = '10000';
+		$config['overwrite'] = true;
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload()) {
+
+            //upload gagal
+            $this->session->set_flashdata('notif', '<div class="uk-alert-warning" uk-alert><a class="uk-alert-close" uk-close></a><h3>PROSES IMPORT GAGAL!</h3><p>'.$this->upload->display_errors().'</p></div>');
+            //redirect halaman
+            redirect('admin/excel_import');
+
+        } else {
+
+            $data_upload = $this->upload->data();
+
+			
+			$inputFileName = realpath('excel/'.$data_upload['file_name']);
+            $inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+                $objReader = PHPExcel_IOFactory::createReader($inputFileType);
+                $objPHPExcel = $objReader->load($inputFileName);
+         
+ 
+            $sheet = $objPHPExcel->getSheet(0);
+            $highestRow = $sheet->getHighestRow();
+            $highestColumn = $sheet->getHighestColumn();
+ 
+			for ($row = 2; $row <= $highestRow; $row++){                  //  Read a row of data into an array   
+				$query = $this->db->query("select max(id) as last from orang");
+			$data=$query->row_array();
+			$last = $data['last'];
+			$nextNoUrut = $last + 1;
+			$id = sprintf('%04s', $nextNoUrut);
+
+			$this->load->library('ciqrcode'); //pemanggilan library QR CODE
+			$config['cacheable']	= true; //boolean, the default is true
+			//$config['cachedir']		= './assets/'; //string, the default is application/cache/
+			//$config['errorlog']		= './assets/'; //string, the default is application/logs/
+			$config['imagedir']		= './assets/images/qrcode/'; //direktori penyimpanan qr code
+			$config['quality']		= true; //boolean, the default is true
+			$config['size']			= '1024'; //interger, the default is 1024
+			$config['black']		= array(224,255,255); // array, default is array(255,255,255)
+			$config['white']		= array(70,130,180); // array, default is array(0,0,0)
+			$this->ciqrcode->initialize($config);
+			$image_name=$id.'.png'; //buat name dari qr code sesuai dengan nim
+			$params['data'] = $id; //data yang akan di jadikan QR CODE
+			$params['level'] = 'H'; //H=High
+			$params['size'] = 25;
+			$params['savename'] = FCPATH.$config['imagedir'].$image_name; //simpan image QR CODE ke folder assets/images/
+			$this->ciqrcode->generate($params); // fungsi untuk generate QR CODE              
+                $rowData = $sheet->rangeToArray('A' . $row . ':' . $highestColumn . $row,
+                                                NULL,
+                                                TRUE,
+                                                FALSE);   
+ 
+                 // Sesuaikan key array dengan nama kolom di database                                                         
+                 $data = array(
+					 "id"=> $id,
+                    "nama"=> $rowData[0][0],
+					"nohp"=> $rowData[0][1],
+					"alamat"=> $rowData[0][2],
+					"email"=> $rowData[0][3],
+					"qr_code"=> $image_name
+                );
+				$insert = $this->db->insert('orang', $data);
+            //delete file from server
+			unlink(realpath('excel/'.$data_upload['file_name']));
+			}
+
+            //upload success
+            $this->session->set_flashdata('notif', '<div class="uk-alert-warning"  uk-alert><a class="uk-alert-close" uk-close></a><h3>PROSES IMPORT BERHASIL!</h3><p>Data berhasil diimport!</p></div>');
+            //redirect halaman
+            redirect('admin/excel_import');
+		}
+    }
 	
     
 }
