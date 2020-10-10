@@ -386,7 +386,7 @@ class Admin extends CI_Controller{
 			}
 
             //upload success
-            $this->session->set_flashdata('notif', '<div class="uk-alert-warning"  uk-alert><a class="uk-alert-close" uk-close></a><h3>PROSES IMPORT BERHASIL!</h3><p>Data berhasil diimport!</p></div>');
+            $this->session->set_flashdata('notif', '<div class="uk-alert-success"  uk-alert><a class="uk-alert-close" uk-close></a><h3>PROSES IMPORT BERHASIL!</h3><p>Data berhasil diimport!</p></div>');
             //redirect halaman
             redirect('admin/excel_import');
 		}
