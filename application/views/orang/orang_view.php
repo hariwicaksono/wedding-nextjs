@@ -18,7 +18,7 @@
     
     <div class="uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s" uk-grid>
     
-    <div class="uk-card-body">
+    <div class="uk-card-body uk-padding">
             <h3 class="uk-card-title">QR Code Anda</h3>
             <p><img src="<?=base_url()?>assets/images/qrcode/<?php echo $hasil->qr_code;?>?<?=random_string('alnum', 8);?>"></p>
             <h3 class="uk-card-title">Nama Anda</h3>
@@ -33,7 +33,7 @@
         <?php if (isset($hasil->foto) && ! empty($hasil->foto)) { ?>
             <img src="<?=base_url()?>assets/images/photos/<?=$hasil->foto?>" uk-cover>
             <?php } else { ?>
-            <img src="<?=base_url()?>assets/img/ava.jpg" uk-cover>
+            <img src="<?=base_url()?>assets/images/ava.jpg" uk-cover>
             <?php } ?>
         
         <canvas width="400" height="400"></canvas>

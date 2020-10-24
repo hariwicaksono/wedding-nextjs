@@ -13,7 +13,7 @@
 <?php if (isset($hasil->foto) && ! empty($hasil->foto)) { ?>
             <a href="<?php echo base_url().'confirm/ui/'.$hasil->id;?>"><img class="uk-border-rounded" src="<?=base_url()?>assets/images/photos/<?=$hasil->foto?>" width="50"></a>
             <?php } else { ?>
-            <a href="<?php echo base_url().'confirm/ui/'.$hasil->id;?>"><img class="uk-border-rounded" src="<?=base_url()?>assets/img/ava.jpg" width="60"></a>
+            <a href="<?php echo base_url().'confirm/ui/'.$hasil->id;?>"><img class="uk-border-rounded" src="<?=base_url()?>assets/images/ava.jpg" width="60"></a>
             <?php } ?>
         </div>
 
