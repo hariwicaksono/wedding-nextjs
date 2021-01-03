@@ -1,26 +1,19 @@
 import Axios from 'axios'
 
-export const SiteUrl = () => {
-    return "http://localhost/wedding-guestbook-app/api/"
-}
-export const LoginUrl = () => {
-    return "http://localhost/wedding-guestbook-app/login/"
-}
+const RootPath = "http://localhost/wedding-app/api/"
 
-export const ImagesUrl = () => {
-    return "http://localhost/wedding-guestbook-app/assets/images/"
-}
-
-export const PhotosUrl = () => {
-    return "http://localhost/wedding-guestbook-app/assets/images/photos/"
-}
-
-const RoothPath = "http://localhost/wedding-app/api/"
+var key = new Buffer.from('YmxvZzEyMw==', 'base64')
+const ApiKey = key.toString();
 
 const GET = (path) => {
     const promise = new Promise((resolve,reject)=>{
-        Axios.get(RoothPath+path).then(res=>{
-            resolve(res.data.data)
+        Axios.get(RootPath+path, {
+            headers: {
+           //'Authorization': `basic ${token}`,
+           'X-API-KEY': `${ApiKey}`
+          },
+          }).then(res=>{
+            resolve(res.data)
         },err=>{
             reject(err)
         })
@@ -30,8 +23,13 @@ const GET = (path) => {
 
 const GET_ID = (path,id) => {
     const promise = new Promise((resolve,reject)=>{
-        Axios.get(RoothPath+path+id).then(res=>{
-            resolve(res.data.data[0])
+        Axios.get(RootPath+path+id, {
+            headers: {
+           //'Authorization': `basic ${token}`,
+           'X-API-KEY': `${ApiKey}`
+          },
+          }).then(res=>{
+            resolve(res.data)
         },err=>{
             reject(err)
         })
@@ -41,29 +39,28 @@ const GET_ID = (path,id) => {
 
 const GET_ID_VAL = (path,data) => {
     const promise = new Promise((resolve,reject) => {
-        Axios.get(RoothPath+path+data).then(res => {
-            resolve(res.data.data)
-        }).catch(er => {
-            reject(er)
+        Axios.get(RootPath+path+data, {
+            headers: {
+           //'Authorization': `basic ${token}`,
+           'X-API-KEY': `${ApiKey}`
+          },
+          }).then(res => {
+            resolve(res.data)
+        }).catch(err => {
+            reject(err)
         })
     })
     return promise
 }
 
-const POST = (path,data) =>{
-    const promise = new Promise((resolve,reject)=>{
-         Axios.post(RoothPath+path,data).then(res=>{
-             resolve(res.data)
-         },err=>{
-             reject(err)
-         })
-    })
-    return promise
- }
-
 const LOGIN = (path,data) => {
     const promise = new Promise((resolve,reject)=>{
-        Axios.post(RoothPath+path,data).then(res=>{
+        Axios.post(RootPath+path,data, {
+            headers: {
+           //'Authorization': `basic ${token}`,
+           'X-API-KEY': `${ApiKey}`
+          },
+          }).then(res=>{
             resolve(res.data)
         },err=>{
             reject(err)
@@ -72,9 +69,14 @@ const LOGIN = (path,data) => {
     return promise
 }
 
-const PUTUSER = (path,data) =>{
+const PUT = (path,data) =>{
     const promise = new Promise((resolve,reject)=>{
-         Axios.put(RoothPath+path,data).then(res=>{
+         Axios.put(RootPath+path,data, {
+            headers: {
+           //'Authorization': `basic ${token}`,
+           'X-API-KEY': `${ApiKey}`
+          },
+          }).then(res=>{
              resolve(res.data)
          },err=>{
              reject(err)
@@ -83,9 +85,14 @@ const PUTUSER = (path,data) =>{
     return promise
  }
 
-const POSTUSER = (path,data) =>{
+const POST = (path,data) =>{
     const promise = new Promise((resolve,reject)=>{
-         Axios.post(RoothPath+path,data).then(res=>{
+         Axios.post(RootPath+path,data, {
+            headers: {
+           //'Authorization': `basic ${token}`,
+           'X-API-KEY': `${ApiKey}`
+          },
+          }).then(res=>{
              resolve(res.data)
          },err=>{
              reject(err)
@@ -96,7 +103,12 @@ const POSTUSER = (path,data) =>{
 
 const Delete = (path,id) => {
     const promise = new Promise((resolve,reject) => {
-        Axios.delete(RoothPath+path+id).then(res =>{
+        Axios.delete(RoothPath+path+id, {
+            headers: {
+           //'Authorization': `basic ${token}`,
+           'X-API-KEY': `${ApiKey}`
+          },
+          }).then(res =>{
             resolve(res.data.status)
         },(err)=>{
             reject(err)
@@ -111,8 +123,8 @@ const PostHadir = (data) => POST('HadirController',data);
 const PostLogin = (data) => LOGIN('LoginController',data);
 const GetUser = () => GET('UserController');
 const GetUserId = (data) => GET_ID('UserController?id=',data);
-const PostUser = (data) => POSTUSER('UserController',data);
-const PutUser = (data) => PUTUSER('UserController',data);
+const PostUser = (data) => POST('UserController',data);
+const PutUser = (data) => PUT('UserController',data);
 const DeleteUser = (id) => Delete('UserController/index_delete?id=',id);
 
 const API = {
