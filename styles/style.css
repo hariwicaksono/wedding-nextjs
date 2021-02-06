@@ -1,0 +1,32 @@
+body {
+background:#F8C8B4 url(../public/images/layout_web.jpg) no-repeat center center;
+-webkit-background-size:cover!important;-moz-background-size:cover!important;
+-o-background-size:cover!important;
+background-size:cover!important;
+}
+.loader {
+  z-index: 99999;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  margin-left: -70px;
+  margin-top: -70px;
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#cc000000,endColorstr=#cc000000);
+  background: rgba(0,0,0,0.6);
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+.slick-prev:before, .slick-next:before {
+    color: #09529b !important;
+  }
+  
+  .slick-prev {
+    z-index: 1;
+  }
+  .slick-next {
+    z-index: 1;
+  }
+  svg{margin-bottom: 0;}
