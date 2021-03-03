@@ -6,6 +6,7 @@
 		<base href="<?php echo base_url()?>">
         <meta name="robots" content="noindex, nofollow">
 <meta name="googlebot" content="noindex, nofollow">
+<link rel="shortcut icon" href="<?php echo base_url('assets/images/favicon.png'); ?>" type="image/x-icon"><!-- X -->
 	<title>Data Tamu Undangan</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/uikit.min.css'?>">
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'assets/css/style.css'?>">
